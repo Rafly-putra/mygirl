@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #005f6b;
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Girlfriend?</h1>
+        <img src="images.jpg" alt="Love image">
+        <div>
+            <button class="button" onclick="submitAnswer('yes')">Yes</button>
+            <button class="button" onclick="submitAnswer('no')">No</button>
+        <div>
+        <div id="response"></div>
+        <audio id="background-music"> 
+            <source src="Virgoun - Bukti.mp3" type="audio/mp3">
+
+        </audio>    
+    </div>
+    
+    <script>
+        function submitAnswer(answer) {
+            var responseDiv = document.getElementById('response');
+            var audio = document.getElementById('background-music');
+            
+            audio.pause();
+
+            if (answer === 'yes') {
+                responseDiv.innerHTML = "Thank you! You've made me the happiest person!";
+                audio.src = "Virgoun - Bukti.mp3";
+            } else {
+                responseDiv.innerHTML = "Oh no! That's okay, I respect your decision.";
+                audio.src = "Goliath.mp3";
+            }
+
+            audio.play().catch(function(error) {
+                    console.log('Playback failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>
