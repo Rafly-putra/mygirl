@@ -1,85 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Girlfriend?</title>
+    <title>Untuk Pacarku</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        margin: 0;
-        background-color: #fffdd0; /* Contoh warna latar belakang halaman */
-    }
-    .container {
-        text-align: center;
-        background-color: #add8e6; /* Contoh warna latar belakang kontainer */
-        color: #000000; /* Contoh warna teks kontainer */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .button {
-        background-color: #4CAF50; /* Contoh warna tombol */
-        color: white; /* Contoh warna teks tombol */
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 10px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .button:hover {
-        background-color: #333333; /* Contoh warna tombol saat di-hover */
-    }
-    #response {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: bold;
-        color: #000000; /* Contoh warna teks respons */
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .heart {
+            color: #e74c3c;
+            font-size: 3em;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hi Zia, I want to say something but I can't say it, so I want to say it here.</h1>
-        <h1>Will You Be My Girlfriend?</h1>
-        <img src="images.jpg" alt="Love image">
-        <div>
-            <button class="button" onclick="submitAnswer('yes')">Yes</button>
-            <button class="button" onclick="submitAnswer('no')">No</button>
-        </div>
-        <div id="response"></div>
-        <audio id="background-music" autoplay loop>
-            <source src="bersamamu.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+        <h1>Untuk Pacarku Tersayang</h1>
+        <p>Sayang,</p>
+        <p>Aku sayang banget sama kamu, rasa ini tumbuh setiap harinya, aku ingin selalu bersamamu.</p>
+        <p class="heart">❤</p>
+        <p>Dengan penuh cinta aku membuat ini, Love You Sayang</p>
+        <p>[Pangeran Rafly]</p>
     </div>
-    
-    <script>
-        function submitAnswer(answer) {
-            var responseDiv = document.getElementById('response');
-            var audio = document.getElementById('background-music');
-            
-            audio.pause();
-            audio.currentTime = 0; // Reset waktu pemutaran
-
-            if (answer === 'yes') {
-                responseDiv.innerHTML = "Thank You! You have made me the happiest person!<br><br><em>'Thank you Zia for accepting me. I am very grateful to be with you. Hopefully in the future we can continue to be together and always be happy.'<br><br>'Rafly&Nazia'</em>";
-                audio.src = "bersamamu.mp3";
-            } else {
-                responseDiv.innerHTML = "Oh no!<br>It's okay, I respect your decision.<br><br><em>'But can you think again about accepting me'</em>";
-                audio.src = "jkt.mp3";
-            }
-
-            audio.play().catch(function(error) {
-                console.log('Playback failed:', error);
-            });
-        }
-    </script>
 </body>
 </html>
