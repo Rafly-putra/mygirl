@@ -69,7 +69,7 @@
         </div>
         <div id="response"></div>
         <audio id="background-music" autoplay loop>
-            <source src="intro_song.mp3" type="audio/mp3">
+            <source src="Bersamamu.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -83,12 +83,13 @@
             audio.currentTime = 0; // Reset waktu pemutaran
 
             if (answer === 'yes') {
-                responseDiv.innerHTML = "Thank you!<br>You've made me the happiest person!<br><br><em>'Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.'</em>";
-                audio.src = "Virgoun - Bukti.mp3";
-            } else {
-                responseDiv.innerHTML = "Oh no!<br>That's okay, I respect your decision.";
-                audio.src = "Goliath.mp3";
-            }
+    responseDiv.innerHTML = "Thank you!<br>You've made me the happiest person!<br><br><em>'Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.'</em>";
+    audio.src = "Virgoun - Bukti.mp3";
+} else {
+    responseDiv.innerHTML = "Oh no!<br>That's okay, I respect your decision.";
+    audio.src = "Goliath.mp3";
+}
+
 
             audio.play().catch(function(error) {
                 console.log('Playback failed:', error);
